@@ -16,7 +16,9 @@ st.warning(
 uploaded_file = st.file_uploader("Choose an X-ray image", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
-    st.image(uploaded_file, caption="Uploaded image", use_container_width=True)
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        st.image(uploaded_file, caption="Uploaded image", use_container_width=True)
 
     if st.button("Run analysis"):
         with st.spinner("Analyzing image..."):
@@ -29,7 +31,7 @@ if uploaded_file is not None:
         else:
             st.success(f"Predicted result: **{result}**")
 
-        st.write(f"Model confidence: **{confidence}%**")
+        st.metric(label="Model confidence", value=f"{confidence:.1f}%")
 
         st.caption(
             "This confidence score is an internal number from the model "
