@@ -16,7 +16,7 @@ st.warning(
 uploaded_file = st.file_uploader("Choose an X-ray image", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
-    st.image(uploaded_file, caption="Uploaded image", use_column_width=True)
+    st.image(uploaded_file, caption="Uploaded image", use_container_width=True)
 
     if st.button("Run analysis"):
         with st.spinner("Analyzing image..."):
