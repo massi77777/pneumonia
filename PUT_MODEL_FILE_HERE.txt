@@ -1,0 +1,7 @@
+Place your trained model file here:
+
+pneumonia_model.keras
+
+It must be at the same level as app.py (the project root folder), NOT inside the utils folder.
+
+After placing it, you can delete this text file.
